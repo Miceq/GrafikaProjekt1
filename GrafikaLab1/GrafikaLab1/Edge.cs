@@ -12,6 +12,7 @@ namespace GrafikaLab1
         public List<Point> ListOfPoints;
         public Vertex Start;
         public Vertex End;
+        public Color c;
         public double Distance(Point point) => ListOfPoints.Min(x => Bresenham.Dist(point, x));
 
         protected Edge(Point x, Point y)
@@ -26,22 +27,23 @@ namespace GrafikaLab1
     {
         public NormalEdge(Point x, Point y) : base(x,y)
         {
+            c=Color.Black;
         }
     }
 
     public class HorizontalEdge : Edge
     {
-        public HorizontalEdge(Point x, Point y) : base(x, y)
+        public HorizontalEdge(Point x, Point y) : base(x, new Point(y.X, x.Y))
         {
-            
+            c = Color.Red;
         }
     }
 
     public class VerticalEdge : Edge
     {
-        public VerticalEdge(Point x, Point y) : base(x, y)
+        public VerticalEdge(Point x, Point y) : base(x, new Point(x.X, y.Y))
         {
-            
+            c = Color.Chartreuse;
         }
     }
 

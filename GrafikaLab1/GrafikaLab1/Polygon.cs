@@ -63,11 +63,11 @@ namespace GrafikaLab1
                 }
                 if (e is HorizontalEdge)
                 {
-                    
+                    edges.Add(new HorizontalEdge(new Point(e.Start.Location.X + xDiff, e.Start.Location.Y + yDiff), new Point(e.End.Location.X + xDiff, e.End.Location.Y + yDiff)));
                 }
                 if (e is VerticalEdge)
                 {
-                    
+                    edges.Add(new VerticalEdge(new Point(e.Start.Location.X + xDiff, e.Start.Location.Y + yDiff), new Point(e.End.Location.X + xDiff, e.End.Location.Y + yDiff)));
                 }
                 if (e is FixedLenghtEdge)
                 {
